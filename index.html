@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Mini App</title>
+    <title>Вход с Яндекс.Капчей</title>
+    <script src="https://api.recaptcha.net/recaptcha/api.js" async defer></script>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-</body>
 
+    <h1>Вход на сайт</h1>
+
+    <!-- Яндекс.Капча -->
+    <div class="g-recaptcha" data-sitekey="ysc1_IieG5MdG7uTQTMe9IUGJiNseMCc7215PvXPSN5jbca7f2847"></div>
+
+    <!-- Кнопка входа через Яндекс -->
+    <a href="https://oauth.yandex.ru/authorize?response_type=code&client_id=d55d87c5398d47f8b7da90a31516ea02">
+        <button>Войти через Яндекс</button>
+    </a>
+
+    <!-- Сообщение после успешной регистрации -->
+    <div id="successMessage" style="display: none;">
+        <p>Регистрация успешна!</p>
+    </div>
+
+    <script>
+        // Скрипт для отображения сообщения после успешной регистрации
+        function showSuccessMessage() {
+            document.getElementById('successMessage').style.display = 'block';
+        }
+
+        // Пример вызова функции после успешной регистрации
+        // showSuccessMessage();
+    </script>
+
+</body>
 </html>
